@@ -13,7 +13,7 @@ include 'koneksi.php';
 <body>
 
 
-    <!-- navbar -->
+    <!-- navbar menu -->
     <?php include 'menu.php' ?>;
 
     <div class="container">
