@@ -11,6 +11,7 @@ if (isset($_SESSION['keranjang'][$id_produk])) {
 else {
     $_SESSION['keranjang'][$id_produk] = 1;
 }
+// memunculkan debug isi session
 // echo "<pre>";
 // print_r($_SESSION);
 // echo "</pre>";
@@ -19,5 +20,3 @@ else {
 echo "<script>alert('produk telah masuk ke keranjang belanja'); </script>";
 echo "<script>location='keranjang.php';</script>"
 ?>
-
-test
