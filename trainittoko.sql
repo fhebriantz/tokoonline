@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Feb 2022 pada 09.17
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.11
+-- Generation Time: Feb 28, 2022 at 10:20 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,16 +35,16 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
-(1, 'rizki@gmail.com', 'rizki', 'Rizki');
+(1, 'lutfi', '1234', 'Rizki');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -53,7 +53,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -63,7 +63,60 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ongkir`
+-- Table structure for table `master_bis`
+--
+
+CREATE TABLE `master_bis` (
+  `id` int(11) NOT NULL,
+  `nama_bis` varchar(255) NOT NULL,
+  `tipe_bis` varchar(255) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `id_kelas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_kelas`
+--
+
+CREATE TABLE `master_kelas` (
+  `id` int(11) NOT NULL,
+  `nama_kelas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_kota`
+--
+
+CREATE TABLE `master_kota` (
+  `id` int(11) NOT NULL,
+  `nama_kota` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_wisata`
+--
+
+CREATE TABLE `master_wisata` (
+  `id` int(11) NOT NULL,
+  `nama_wisata` varchar(255) NOT NULL,
+  `id_kota` int(11) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto_wisata_1` varchar(255) NOT NULL,
+  `foto_wisata_2` varchar(255) NOT NULL,
+  `foto_wisata_3` varchar(255) NOT NULL,
+  `video_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ongkir`
 --
 
 CREATE TABLE `ongkir` (
@@ -73,7 +126,7 @@ CREATE TABLE `ongkir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `ongkir`
+-- Dumping data for table `ongkir`
 --
 
 INSERT INTO `ongkir` (`id_ongkir`, `nama_kota`, `tarif`) VALUES
@@ -83,7 +136,7 @@ INSERT INTO `ongkir` (`id_ongkir`, `nama_kota`, `tarif`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -96,11 +149,11 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pelanggan`
+-- Dumping data for table `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `email_pelanggan`, `password_pelanggan`, `nama_pelanggan`, `telepon_pelanggan`, `alamat_pelanggan`) VALUES
-(1, 'rizki@gmail.com', 'rizki', 'Rizki', '08888123123', ''),
+(1, 'lutfi', '1234', 'Rizki', '08888123123', ''),
 (2, 'erik@gmail.com', 'erik', 'Erik Candra', '0888111111', ''),
 (3, 'yudi@contoh.com', '1234', 'Yudi Saputra', '0746356643', 'Jogja'),
 (4, 'doni@contoh.com', '1234', 'Doni', '0761888888', 'Semarang'),
@@ -109,7 +162,7 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `email_pelanggan`, `password_pelanggan`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembayaran`
+-- Table structure for table `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
@@ -123,7 +176,7 @@ CREATE TABLE `pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pembayaran`
+-- Dumping data for table `pembayaran`
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_pembelian`, `nama`, `bank`, `jumlah`, `tanggal`, `bukti`) VALUES
@@ -133,7 +186,7 @@ INSERT INTO `pembayaran` (`id_pembayaran`, `id_pembelian`, `nama`, `bank`, `juml
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembelian`
+-- Table structure for table `pembelian`
 --
 
 CREATE TABLE `pembelian` (
@@ -156,7 +209,7 @@ CREATE TABLE `pembelian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pembelian`
+-- Dumping data for table `pembelian`
 --
 
 INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `total_pembelian`, `alamat_pengiriman`, `status_pembelian`, `totalberat`, `provinsi`, `distrik`, `tipe`, `kodepos`, `ekspedisi`, `paket`, `ongkir`, `estimasi`, `resi_pengiriman`) VALUES
@@ -167,7 +220,7 @@ INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `t
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembelian_produk`
+-- Table structure for table `pembelian_produk`
 --
 
 CREATE TABLE `pembelian_produk` (
@@ -183,7 +236,7 @@ CREATE TABLE `pembelian_produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pembelian_produk`
+-- Dumping data for table `pembelian_produk`
 --
 
 INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produk`, `jumlah`, `nama`, `harga`, `berat`, `subberat`, `subharga`) VALUES
@@ -194,7 +247,7 @@ INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produ
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
 CREATE TABLE `produk` (
@@ -209,7 +262,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`, `berat_produk`, `foto_produk`, `deskripsi_produk`, `stok_produk`) VALUES
@@ -223,7 +276,7 @@ INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `harga_produk`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk_foto`
+-- Table structure for table `produk_foto`
 --
 
 CREATE TABLE `produk_foto` (
@@ -233,7 +286,7 @@ CREATE TABLE `produk_foto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `produk_foto`
+-- Dumping data for table `produk_foto`
 --
 
 INSERT INTO `produk_foto` (`id_produk_foto`, `id_produk`, `nama_produk_foto`) VALUES
@@ -242,121 +295,189 @@ INSERT INTO `produk_foto` (`id_produk_foto`, `id_produk`, `nama_produk_foto`) VA
 (5, 8, '20200905085618sincerely-media-CXYPfveiuis-unsplash.jpg'),
 (6, 6, 'sincerely-media-CXYPfveiuis-unsplash.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_penumpang`
+--
+
+CREATE TABLE `tabel_penumpang` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `no_identitas` int(11) NOT NULL,
+  `no_hp` varchar(255) NOT NULL,
+  `id_kelas` int(11) NOT NULL,
+  `id_bis` int(11) NOT NULL,
+  `id_kota_asal` int(11) NOT NULL,
+  `id_kota_tujuan` int(11) NOT NULL,
+  `tanggal_berangkat` date NOT NULL,
+  `jumlah_penumpang` int(11) NOT NULL,
+  `jumlah_lansia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `ongkir`
+-- Indexes for table `master_bis`
+--
+ALTER TABLE `master_bis`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `master_kelas`
+--
+ALTER TABLE `master_kelas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `master_wisata`
+--
+ALTER TABLE `master_wisata`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ongkir`
 --
 ALTER TABLE `ongkir`
   ADD PRIMARY KEY (`id_ongkir`);
 
 --
--- Indeks untuk tabel `pelanggan`
+-- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indeks untuk tabel `pembayaran`
+-- Indexes for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`);
 
 --
--- Indeks untuk tabel `pembelian`
+-- Indexes for table `pembelian`
 --
 ALTER TABLE `pembelian`
   ADD PRIMARY KEY (`id_pembelian`);
 
 --
--- Indeks untuk tabel `pembelian_produk`
+-- Indexes for table `pembelian_produk`
 --
 ALTER TABLE `pembelian_produk`
   ADD PRIMARY KEY (`id_pembelian_produk`);
 
 --
--- Indeks untuk tabel `produk`
+-- Indexes for table `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
--- Indeks untuk tabel `produk_foto`
+-- Indexes for table `produk_foto`
 --
 ALTER TABLE `produk_foto`
   ADD PRIMARY KEY (`id_produk_foto`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `tabel_penumpang`
+--
+ALTER TABLE `tabel_penumpang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `ongkir`
+-- AUTO_INCREMENT for table `master_bis`
+--
+ALTER TABLE `master_bis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `master_kelas`
+--
+ALTER TABLE `master_kelas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `master_wisata`
+--
+ALTER TABLE `master_wisata`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `ongkir`
 --
 ALTER TABLE `ongkir`
   MODIFY `id_ongkir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `pelanggan`
+-- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `pembayaran`
+-- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
   MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `pembelian`
+-- AUTO_INCREMENT for table `pembelian`
 --
 ALTER TABLE `pembelian`
   MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `pembelian_produk`
+-- AUTO_INCREMENT for table `pembelian_produk`
 --
 ALTER TABLE `pembelian_produk`
   MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `produk`
+-- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
   MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `produk_foto`
+-- AUTO_INCREMENT for table `produk_foto`
 --
 ALTER TABLE `produk_foto`
   MODIFY `id_produk_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tabel_penumpang`
+--
+ALTER TABLE `tabel_penumpang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
