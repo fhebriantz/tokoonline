@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2022 at 10:20 AM
+-- Generation Time: Feb 28, 2022 at 10:55 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -74,6 +74,15 @@ CREATE TABLE `master_bis` (
   `id_kelas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `master_bis`
+--
+
+INSERT INTO `master_bis` (`id`, `nama_bis`, `tipe_bis`, `harga`, `id_kelas`) VALUES
+(4, 'Damri-Reguler', 'Merchedes-Benz', 50000, 1),
+(5, 'Damri-Bisnis', 'Merchedes-Benz', 60000, 2),
+(6, 'Damri-Eksekutif', 'Merchedes-Benz', 70000, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -82,8 +91,17 @@ CREATE TABLE `master_bis` (
 
 CREATE TABLE `master_kelas` (
   `id` int(11) NOT NULL,
-  `nama_kelas` int(11) NOT NULL
+  `nama_kelas` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `master_kelas`
+--
+
+INSERT INTO `master_kelas` (`id`, `nama_kelas`) VALUES
+(1, 'Ekonomi'),
+(2, 'Bisnis'),
+(3, 'Eksekutif');
 
 -- --------------------------------------------------------
 
@@ -95,6 +113,14 @@ CREATE TABLE `master_kota` (
   `id` int(11) NOT NULL,
   `nama_kota` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `master_kota`
+--
+
+INSERT INTO `master_kota` (`id`, `nama_kota`) VALUES
+(3, 'Bogor'),
+(4, 'Bandung');
 
 -- --------------------------------------------------------
 
@@ -112,6 +138,14 @@ CREATE TABLE `master_wisata` (
   `foto_wisata_3` varchar(255) NOT NULL,
   `video_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `master_wisata`
+--
+
+INSERT INTO `master_wisata` (`id`, `nama_wisata`, `id_kota`, `deskripsi`, `foto_wisata_1`, `foto_wisata_2`, `foto_wisata_3`, `video_url`) VALUES
+(1, 'Kawah Putih', 4, 'Kawah Putih adalah sebuah tempat wisata di Jawa Barat yang terletak di Desa Alam Endah, Kecamatan Rancabali, Kabupaten Bandung Jawa Barat yang terletak di kaki Gunung Patuha. Kawah putih merupakan sebuah danau yang terbentuk dari letusan Gunung Patuha.', 'kawah1.jpg', 'kawah2.jpg', 'kawah3.jpg', 'https://www.youtube.com/watch?v=H2pU69Y6SsM'),
+(2, 'Tangkuban Perahu', 4, 'Gunung Tangkuban Parahu adalah salah satu gunung yang terletak di Provinsi Jawa Barat, Indonesia. Sekitar 20 km ke arah utara Kota Bandung, dengan rimbun pohon pinus dan hamparan kebun teh di sekitarnya, Gunung Tangkuban Parahu mempunyai ketinggian setinggi 2.084 meter.', 'tangkubanperahu1.jpg', 'tangkubanperahu2.jpg', 'tangkubanperahu3.jpg', 'https://www.youtube.com/watch?v=V0XrD6iVZvQ');
 
 -- --------------------------------------------------------
 
@@ -344,6 +378,12 @@ ALTER TABLE `master_kelas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `master_kota`
+--
+ALTER TABLE `master_kota`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `master_wisata`
 --
 ALTER TABLE `master_wisata`
@@ -417,19 +457,25 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `master_bis`
 --
 ALTER TABLE `master_bis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `master_kelas`
 --
 ALTER TABLE `master_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `master_kota`
+--
+ALTER TABLE `master_kota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `master_wisata`
 --
 ALTER TABLE `master_wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ongkir`
