@@ -87,6 +87,12 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 					<li>
 						<a href="index.php?halaman=wisata"><i class="fa fa-user"></i>master wisata</a>
 					</li>
+					<li>
+						<a href="index.php?halaman=tentang"><i class="fa fa-user"></i>master tentang</a>
+					</li>
+					<li>
+						<a href="index.php?halaman=penumpang"><i class="fa fa-user"></i>Tiket Penumpang</a>
+					</li>
 				</ul>
 
 			</div>
@@ -149,6 +155,26 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						include 'ubahkelas.php';
 					} elseif ($_GET["halaman"] == "hapuskelas") {
 						include 'hapuskelas.php';
+					} elseif ($_GET["halaman"] == "tambahbis") {
+						include 'tambahbis.php';
+					} elseif ($_GET["halaman"] == "ubahbis") {
+						include 'ubahbis.php';
+					} elseif ($_GET["halaman"] == "hapusbis") {
+						include 'hapusbis.php';
+					} elseif ($_GET["halaman"] == "tentang") {
+						include 'tentang.php';
+					} elseif ($_GET["halaman"] == "ubahtentang") {
+						include 'ubahtentang.php';
+					} elseif ($_GET["halaman"] == "hapuspenumpang") {
+						include 'hapuspenumpang.php';
+					} elseif ($_GET["halaman"] == "detailpenumpang") {
+						include 'detailpenumpang.php';
+					} elseif ($_GET["halaman"] == "tambahpenumpang") {
+						include 'tambahpenumpang.php';
+					} elseif ($_GET["halaman"] == "ubahpenumpang") {
+						include 'ubahpenumpang.php';
+					} elseif ($_GET["halaman"] == "penumpang") {
+						include 'penumpang.php';
 					}
 				} else {
 					include 'home.php';

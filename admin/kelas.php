@@ -17,6 +17,7 @@ while ($tiap = $ambil->fetch_assoc()) {
         <tr>
             <th>No</th>
             <th>Nama Kelas</th>
+            <th>Harga</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@ while ($tiap = $ambil->fetch_assoc()) {
             <tr>
                 <td><?php echo $key + 1 ?></td>
                 <td><?php echo $value["nama_kelas"] ?></td>
+                <td><?php echo $value["harga"] ?></td>
                 <td>
                     <a href="index.php?halaman=ubahkelas&id=<?php echo $value['id']; ?>" class="btn btn-warning btn-sm">Ubah</a>
                     <a href="index.php?halaman=hapuskelas&id=<?php echo $value['id']; ?>" class="btn btn-danger btn-sm">Hapus</a>
