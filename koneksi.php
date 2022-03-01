@@ -1,1 +1,1 @@
-<?php $koneksi = new mysqli("localhost", "root", "", "trainittoko");
+<?php $koneksi = new mysqli("localhost", "root", "", "travel_bogor_bandung");
