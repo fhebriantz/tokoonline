@@ -43,7 +43,7 @@ if (!isset($_SESSION['admin'])) {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Kyy</a>
+				<a class="navbar-brand" href="index.html">Administrator</a>
 			</div>
 			<div style="color: red;
 padding: 15px 50px 5px 50px;
@@ -58,40 +58,25 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						<img src="assets/img/find_user.png" class="user-image img-responsive" />
 					</li>
 					<li>
-						<a href="index.php"><i class="fa fa-dashboard"></i>Home</a>
+						<a href="../index.html"><i class="fa fa-dashboard"></i>Website</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=produk"><i class="fa fa-cube"></i> Produk</a>
+						<a href="index.php?halaman=bis"><i class="fa fa-bus"></i>Master Bis</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=kategori"><i class="fa fa-tags"></i> Kategori</a>
+						<a href="index.php?halaman=kelas"><i class="fa fa-briefcase"></i>Master Kelas</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=pembelian"><i class="fa fa-shopping-cart"></i>Pembelian</a>
+						<a href="index.php?halaman=kota"><i class="fa fa-briefcase"></i>Master Kota</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=laporan_pembelian"><i class="fa fa-file"></i>Laporan</a>
+						<a href="index.php?halaman=wisata"><i class="fa fa-briefcase"></i>Master Wisata</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=pelanggan"><i class="fa fa-user"></i>Pelanggan</a>
+						<a href="index.php?halaman=tentang"><i class="fa fa-briefcase"></i>Master Tentang</a>
 					</li>
 					<li>
-						<a href="index.php?halaman=bis"><i class="fa fa-user"></i>master bis</a>
-					</li>
-					<li>
-						<a href="index.php?halaman=kelas"><i class="fa fa-user"></i>master kelas</a>
-					</li>
-					<li>
-						<a href="index.php?halaman=kota"><i class="fa fa-user"></i>master kota</a>
-					</li>
-					<li>
-						<a href="index.php?halaman=wisata"><i class="fa fa-user"></i>master wisata</a>
-					</li>
-					<li>
-						<a href="index.php?halaman=tentang"><i class="fa fa-user"></i>master tentang</a>
-					</li>
-					<li>
-						<a href="index.php?halaman=penumpang"><i class="fa fa-user"></i>Tiket Penumpang</a>
+						<a href="index.php?halaman=penumpang"><i class="fa fa-briefcase"></i>Tiket Penumpang</a>
 					</li>
 				</ul>
 
@@ -103,34 +88,10 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 			<div id="page-inner">
 				<?php
 				if (isset($_GET["halaman"])) {
-					if ($_GET["halaman"] == "produk") {
-						include 'produk.php';
-					} elseif ($_GET["halaman"] == "kategori") {
-						include 'kategori.php';
-					} elseif ($_GET["halaman"] == "pembelian") {
-						include 'pembelian.php';
-					} elseif ($_GET["halaman"] == "pelanggan") {
-						include 'pelanggan.php';
-					} elseif ($_GET["halaman"] == "detail") {
-						include 'detail.php';
-					} elseif ($_GET["halaman"] == "tambahproduk") {
-						include 'tambahproduk.php';
-					} elseif ($_GET["halaman"] == "hapusproduk") {
-						include 'hapusproduk.php';
-					} elseif ($_GET["halaman"] == "ubahproduk") {
-						include 'ubahproduk.php';
-					} elseif ($_GET["halaman"] == "detailproduk") {
-						include 'detailproduk.php';
-					} elseif ($_GET["halaman"] == "hapusfotoproduk") {
-						include 'hapusfotoproduk.php';
-					} elseif ($_GET["halaman"] == "pembayaran") {
-						include 'pembayaran.php';
-					} elseif ($_GET["halaman"] == "laporan_pembelian") {
-						include 'laporan_pembelian.php';
+					if ($_GET["halaman"] == "bis") {
+						include 'bis.php';
 					} elseif ($_GET["halaman"] == "logout") {
 						include 'logout.php';
-					} elseif ($_GET["halaman"] == "bis") {
-						include 'bis.php';
 					} elseif ($_GET["halaman"] == "kelas") {
 						include 'kelas.php';
 					} elseif ($_GET["halaman"] == "kota") {
@@ -177,7 +138,7 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						include 'penumpang.php';
 					}
 				} else {
-					include 'home.php';
+					include 'penumpang.php';
 				}
 				?>
 			</div>

@@ -30,7 +30,7 @@ include '../koneksi.php';
         <div class="row text-center ">
             <div class="col-md-12">
                 <br /><br />
-                <h2> TrainIT : Login</h2>
+                <h2> Admin Travel : Login</h2>
 
                 <h5>( Login yourself to get access )</h5>
                 <br />
@@ -54,18 +54,9 @@ include '../koneksi.php';
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                 <input type="password" class="form-control" name="pass" />
                             </div>
-                            <div class="form-group">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" /> Remember me
-                                </label>
-                                <span class="pull-right">
-                                    <a href="#">Forget password ? </a>
-                                </span>
-                            </div>
 
                             <button class="btn btn-primary" name="login">Login</button>
-                            <hr />
-                            Not register ? <a href="registeration.html">click here </a>
+                            
                         </form>
                         <?php
                         if (isset($_POST['login'])) {
