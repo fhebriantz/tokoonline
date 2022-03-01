@@ -137,6 +137,18 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						include 'ubahwisata.php';
 					} elseif ($_GET["halaman"] == "hapuswisata") {
 						include 'hapuswisata.php';
+					} elseif ($_GET["halaman"] == "tambahkota") {
+						include 'tambahkota.php';
+					} elseif ($_GET["halaman"] == "ubahkota") {
+						include 'ubahkota.php';
+					} elseif ($_GET["halaman"] == "hapuskota") {
+						include 'hapuskota.php';
+					} elseif ($_GET["halaman"] == "tambahkelas") {
+						include 'tambahkelas.php';
+					} elseif ($_GET["halaman"] == "ubahkelas") {
+						include 'ubahkelas.php';
+					} elseif ($_GET["halaman"] == "hapuskelas") {
+						include 'hapuskelas.php';
 					}
 				} else {
 					include 'home.php';

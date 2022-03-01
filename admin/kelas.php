@@ -25,8 +25,8 @@ while ($tiap = $ambil->fetch_assoc()) {
                 <td><?php echo $key + 1 ?></td>
                 <td><?php echo $value["nama_kelas"] ?></td>
                 <td>
-                    <a href="" class="btn btn-warning btn-sm">Ubah</a>
-                    <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="index.php?halaman=ubahkelas&id=<?php echo $value['id']; ?>" class="btn btn-warning btn-sm">Ubah</a>
+                    <a href="index.php?halaman=hapuskelas&id=<?php echo $value['id']; ?>" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
             </tr>
         <?php endforeach ?>
@@ -34,4 +34,4 @@ while ($tiap = $ambil->fetch_assoc()) {
 
 </table>
 
-<a href="" class="btn btn-default">Tambah Data</a>
+<a href="index.php?halaman=tambahkelas" class="btn btn-default">Tambah Data</a>
