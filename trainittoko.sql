@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Mar 2022 pada 07.25
+-- Waktu pembuatan: 01 Mar 2022 pada 14.05
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -70,18 +70,20 @@ CREATE TABLE `master_bis` (
   `id` int(11) NOT NULL,
   `nama_bis` varchar(255) NOT NULL,
   `tipe_bis` varchar(255) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `id_kelas` int(11) NOT NULL
+  `id_kelas` int(11) NOT NULL,
+  `foto_bis_1` varchar(255) NOT NULL,
+  `foto_bis_2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `master_bis`
 --
 
-INSERT INTO `master_bis` (`id`, `nama_bis`, `tipe_bis`, `harga`, `id_kelas`) VALUES
-(4, 'Damri-Reguler', 'Merchedes-Benz', 50000, 1),
-(5, 'Damri-Bisnis', 'Merchedes-Benz', 60000, 2),
-(6, 'Damri-Eksekutif', 'Merchedes-Benz', 70000, 3);
+INSERT INTO `master_bis` (`id`, `nama_bis`, `tipe_bis`, `id_kelas`, `foto_bis_1`, `foto_bis_2`) VALUES
+(4, 'Damri-Reguler', 'Merchedes-Benz', 1, '2021-10-31 (1).png', '2021-10-28 (3).png'),
+(5, 'Damri-Bisnis', 'Merchedes-Benz', 2, '2021-10-28 (2).png', '2021-10-29.png'),
+(6, 'Damri-Eksekutif', 'Merchedes-Benz', 3, '2021-10-25.png', '2021-10-27 (1).png'),
+(8, 'gxgx', 'gaxgx', 2, '2021-11-14.png', '2021-12-10.png');
 
 -- --------------------------------------------------------
 
@@ -91,17 +93,18 @@ INSERT INTO `master_bis` (`id`, `nama_bis`, `tipe_bis`, `harga`, `id_kelas`) VAL
 
 CREATE TABLE `master_kelas` (
   `id` int(11) NOT NULL,
-  `nama_kelas` varchar(255) NOT NULL
+  `nama_kelas` varchar(255) NOT NULL,
+  `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `master_kelas`
 --
 
-INSERT INTO `master_kelas` (`id`, `nama_kelas`) VALUES
-(1, 'Reguler'),
-(2, 'Bisnis'),
-(3, 'Eksekutif');
+INSERT INTO `master_kelas` (`id`, `nama_kelas`, `harga`) VALUES
+(1, 'Reguler', 40000),
+(2, 'Bisnis', 50000),
+(3, 'Eksekutif', 60000);
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,28 @@ CREATE TABLE `master_kota` (
 
 INSERT INTO `master_kota` (`id`, `nama_kota`) VALUES
 (3, 'Bogor'),
-(4, 'Bandung');
+(4, 'Bandung'),
+(10, 'tangerang');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `master_tentang`
+--
+
+CREATE TABLE `master_tentang` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto_tentang` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `master_tentang`
+--
+
+INSERT INTO `master_tentang` (`id`, `judul`, `deskripsi`, `foto_tentang`) VALUES
+(1, 'Tentang Kami', '  Selamat datang di jadwalbis.com, terima kasih atas kebaikan hati Anda mengunjungi website kami.\r\n\r\nJabis atau jadwalbis.com adalah sebuah website yang menyediakan informasi mengenai jadwal dan tarif bis umum di Indonesia. Informasi dalam situs ini terdiri dari jadwal, tarif, nama P.O Bis, no telp PO bis, serta kota yang dilewati pada rute yang bersangkutan.\r\n\r\nMisi kami adalah untuk membantu para traveller mendapatkan perkiraan informasi mengenai jadwal dan tarif bis umum Indonesia secara cuma-cuma.\r\n\r\nSaat ini kami sedang terus mengembangkan situs ini. Kami terus melengkapi informasi dalam situs ini dari waktu ke waktu sehingga informasi jadwal bis di Indonesia dapat di cakup oleh situs ini. Anda dapat pula berkontribusi memberikan informasi mengenai jadwal dan tarif bis yang anda ketahui melalui menu Kontribusi.\r\n\r\nSemua Informasi dalam situs ini dapat anda peroleh tanpa dipungut biaya terkecuali biaya koneksi internet untuk mengakses Jabis, namun Anda perlu membaca halaman Kebijakan Privasi, Ketentuan Layanan, serta Sangkalan untuk memahami ketentuan mengenai bagaimana menggunakan informasi dalam situs ini.\r\n\r\nMudah-mudahan website kami bisa memberi banyak manfaat untuk Anda.\r\n\r\nSalam.                ', 'tentang.jpg');
 
 -- --------------------------------------------------------
 
@@ -188,7 +212,7 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `email_pelanggan`, `password_pelanggan`, `nama_pelanggan`, `telepon_pelanggan`, `alamat_pelanggan`) VALUES
-(1, 'lutfi', '1234', 'Rizki', '08888123123', ''),
+(1, 'lutfi@a.a', '1234', 'Rizki', '08888123123', ''),
 (2, 'erik@gmail.com', 'erik', 'Erik Candra', '0888111111', ''),
 (3, 'yudi@contoh.com', '1234', 'Yudi Saputra', '0746356643', 'Jogja'),
 (4, 'doni@contoh.com', '1234', 'Doni', '0761888888', 'Semarang'),
@@ -339,16 +363,28 @@ INSERT INTO `produk_foto` (`id_produk_foto`, `id_produk`, `nama_produk_foto`) VA
 CREATE TABLE `tabel_penumpang` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `no_identitas` int(11) NOT NULL,
+  `no_identitas` bigint(20) NOT NULL,
   `no_hp` varchar(255) NOT NULL,
   `id_kelas` int(11) NOT NULL,
-  `id_bis` int(11) NOT NULL,
   `id_kota_asal` int(11) NOT NULL,
   `id_kota_tujuan` int(11) NOT NULL,
   `tanggal_berangkat` date NOT NULL,
   `jumlah_penumpang` int(11) NOT NULL,
-  `jumlah_lansia` int(11) NOT NULL
+  `jumlah_lansia` int(11) NOT NULL,
+  `total_harga` int(20) NOT NULL,
+  `kode_tiket` varchar(255) NOT NULL,
+  `kode_unik_bayar` int(11) NOT NULL,
+  `bukti_bayar` varchar(250) NOT NULL,
+  `status` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tabel_penumpang`
+--
+
+INSERT INTO `tabel_penumpang` (`id`, `nama`, `no_identitas`, `no_hp`, `id_kelas`, `id_kota_asal`, `id_kota_tujuan`, `tanggal_berangkat`, `jumlah_penumpang`, `jumlah_lansia`, `total_harga`, `kode_tiket`, `kode_unik_bayar`, `bukti_bayar`, `status`) VALUES
+(1, 'Rizki', 3271011111110001, '085718888888', 2, 3, 4, '2022-03-17', 4, 1, 190000, 'RTX3Z', 95, 'bukti.jpg', 'lunas'),
+(2, 'rizki', 21313, '21321312', 1, 3, 10, '2022-03-15', 2, 3, 2121, '1232144', 1234124, '2021-10-27 (1).png', 'pending');
 
 --
 -- Indexes for dumped tables
@@ -382,6 +418,12 @@ ALTER TABLE `master_kelas`
 -- Indeks untuk tabel `master_kota`
 --
 ALTER TABLE `master_kota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `master_tentang`
+--
+ALTER TABLE `master_tentang`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -458,19 +500,25 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `master_bis`
 --
 ALTER TABLE `master_bis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_kelas`
 --
 ALTER TABLE `master_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_kota`
 --
 ALTER TABLE `master_kota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT untuk tabel `master_tentang`
+--
+ALTER TABLE `master_tentang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_wisata`
@@ -524,7 +572,7 @@ ALTER TABLE `produk_foto`
 -- AUTO_INCREMENT untuk tabel `tabel_penumpang`
 --
 ALTER TABLE `tabel_penumpang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
