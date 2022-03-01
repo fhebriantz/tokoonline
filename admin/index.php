@@ -58,7 +58,7 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						<img src="assets/img/find_user.png" class="user-image img-responsive" />
 					</li>
 					<li>
-						<a href="../index.html"><i class="fa fa-dashboard"></i>Website</a>
+						<a href="../index.php"><i class="fa fa-dashboard"></i>Website</a>
 					</li>
 					<li>
 						<a href="index.php?halaman=bis"><i class="fa fa-bus"></i>Master Bis</a>

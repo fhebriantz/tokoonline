@@ -2,8 +2,10 @@
 include 'koneksi.php';
 ?>
 
-<html class="no-js"> <!--<![endif]-->
-	<head>
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Travel Bogor Bandung</title>
@@ -12,7 +14,7 @@ include 'koneksi.php';
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="Rizki" />
 
-  <!-- 
+	<!-- 
 	//////////////////////////////////////////////////////
 
 	FREE HTML5 TEMPLATE 
@@ -26,12 +28,12 @@ include 'koneksi.php';
 	//////////////////////////////////////////////////////
 	 -->
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
 	<meta name="twitter:title" content="" />
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
@@ -41,7 +43,7 @@ include 'koneksi.php';
 	<link rel="shortcut icon" href="favicon.ico">
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -57,8 +59,10 @@ include 'koneksi.php';
 	<!-- CS Select -->
 	<link rel="stylesheet" href="css/cs-select.css">
 	<link rel="stylesheet" href="css/cs-skin-border.css">
-	
+
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/custom.css">
+
 
 
 	<!-- Modernizr JS -->
@@ -68,111 +72,106 @@ include 'koneksi.php';
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	</head>
-	<body>
-		<div id="fh5co-wrapper">
-			<div id="fh5co-page">
-				<?php include 'navbar.php';?>
-				
-				<!-- konten -->
-						<?php
-							if(isset($_GET["halaman"])){ 
-								if($_GET["halaman"] == "blog"){
-									include 'blog.php';
-								}
-								elseif($_GET["halaman"] == "car"){
-									include 'car.php';
-								}
-								elseif($_GET["halaman"] == "contact"){
-									include 'contact.php';
-								}
-								elseif($_GET["halaman"] == "flight"){
-									include 'flight.php';
-								}
-								elseif($_GET["halaman"] == "hotel"){
-									include 'hotel.php';
-								}
-								elseif($_GET["halaman"] == "vacation"){
-									include 'vacation.php';
-								}
-							}
-							else{
-								include 'home.php';
-							}
-						?>     
-				<!-- akhir konten -->
-			</div>
+</head>
+
+<body>
+	<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+			<?php include 'navbar.php'; ?>
+
+			<!-- konten -->
+			<?php
+			if (isset($_GET["halaman"])) {
+				if ($_GET["halaman"] == "blog") {
+					include 'blog.php';
+				} elseif ($_GET["halaman"] == "car") {
+					include 'car.php';
+				} elseif ($_GET["halaman"] == "contact") {
+					include 'contact.php';
+				} elseif ($_GET["halaman"] == "flight") {
+					include 'flight.php';
+				} elseif ($_GET["halaman"] == "hotel") {
+					include 'hotel.php';
+				} elseif ($_GET["halaman"] == "vacation") {
+					include 'vacation.php';
+				}
+			} else {
+				include 'home.php';
+			}
+			?>
+			<!-- akhir konten -->
 		</div>
-		<footer>
-			<div id="footer">
-				<div class="container">
-					<div class="row row-bottom-padded-md">
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>About Travel</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Flights Routes</h3>
-							<ul>
-								<li><a href="#">Manila flights</a></li>
-								<li><a href="#">Dubai flights</a></li>
-								<li><a href="#">Bangkok flights</a></li>
-								<li><a href="#">Tokyo Flight</a></li>
-								<li><a href="#">New York Flights</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Top Hotels</h3>
-							<ul>
-								<li><a href="#">Boracay Hotel</a></li>
-								<li><a href="#">Dubai Hotel</a></li>
-								<li><a href="#">Singapore Hotel</a></li>
-								<li><a href="#">Manila Hotel</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Interest</h3>
-							<ul>
-								<li><a href="#">Beaches</a></li>
-								<li><a href="#">Family Travel</a></li>
-								<li><a href="#">Budget Travel</a></li>
-								<li><a href="#">Food &amp; Drink</a></li>
-								<li><a href="#">Honeymoon and Romance</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Best Places</h3>
-							<ul>
-								<li><a href="#">Boracay Beach</a></li>
-								<li><a href="#">Dubai</a></li>
-								<li><a href="#">Singapore</a></li>
-								<li><a href="#">Hongkong</a></li>
-							</ul>
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-							<h3>Affordable</h3>
-							<ul>
-								<li><a href="#">Food &amp; Drink</a></li>
-								<li><a href="#">Fare Flights</a></li>
-							</ul>
-						</div>
+	</div>
+	<footer>
+		<div id="footer">
+			<div class="container">
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>About Travel</h3>
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 					</div>
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 text-center">
-							<p class="fh5co-social-icons">
-								<a href="#"><i class="icon-twitter2"></i></a>
-								<a href="#"><i class="icon-facebook2"></i></a>
-								<a href="#"><i class="icon-instagram"></i></a>
-								<a href="#"><i class="icon-dribbble2"></i></a>
-								<a href="#"><i class="icon-youtube"></i></a>
-							</p>
-							</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>Top Flights Routes</h3>
+						<ul>
+							<li><a href="#">Manila flights</a></li>
+							<li><a href="#">Dubai flights</a></li>
+							<li><a href="#">Bangkok flights</a></li>
+							<li><a href="#">Tokyo Flight</a></li>
+							<li><a href="#">New York Flights</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>Top Hotels</h3>
+						<ul>
+							<li><a href="#">Boracay Hotel</a></li>
+							<li><a href="#">Dubai Hotel</a></li>
+							<li><a href="#">Singapore Hotel</a></li>
+							<li><a href="#">Manila Hotel</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>Interest</h3>
+						<ul>
+							<li><a href="#">Beaches</a></li>
+							<li><a href="#">Family Travel</a></li>
+							<li><a href="#">Budget Travel</a></li>
+							<li><a href="#">Food &amp; Drink</a></li>
+							<li><a href="#">Honeymoon and Romance</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>Best Places</h3>
+						<ul>
+							<li><a href="#">Boracay Beach</a></li>
+							<li><a href="#">Dubai</a></li>
+							<li><a href="#">Singapore</a></li>
+							<li><a href="#">Hongkong</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+						<h3>Affordable</h3>
+						<ul>
+							<li><a href="#">Food &amp; Drink</a></li>
+							<li><a href="#">Fare Flights</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<p class="fh5co-social-icons">
+							<a href="#"><i class="icon-twitter2"></i></a>
+							<a href="#"><i class="icon-facebook2"></i></a>
+							<a href="#"><i class="icon-instagram"></i></a>
+							<a href="#"><i class="icon-dribbble2"></i></a>
+							<a href="#"><i class="icon-youtube"></i></a>
+						</p>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-	
+
 
 	</div>
 	<!-- END fh5co-page -->
@@ -205,10 +204,10 @@ include 'koneksi.php';
 	<!-- CS Select -->
 	<script src="js/classie.js"></script>
 	<script src="js/selectFx.js"></script>
-	
+
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 
-	</body>
-</html>
+</body>
 
+</html>
