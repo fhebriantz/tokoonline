@@ -100,7 +100,7 @@ if (isset($_POST['ubah'])) {
 
     echo "<script>alert('data wisata telah diubah');</script>";
     echo "<script>location='index.php?halaman=wisata';</script>";
-
+// $test = $_GET[id];
     // echo "<pre>";
     // print_r($_FILES["foto"]);
     // echo "</pre>";

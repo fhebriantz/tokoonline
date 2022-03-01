@@ -10,9 +10,9 @@ while ($tiap = $kelas->fetch_assoc()) {
     $datakelas[] = $tiap;
 }
 
-echo "<pre>";
-print_r($datakota);
-echo "</pre>";
+// echo "<pre>";
+// print_r($datakota);
+// echo "</pre>";
 
 ?>
 <div class="fh5co-hero">
@@ -27,90 +27,92 @@ echo "</pre>";
 
                             <!-- Tab panes -->
                             <div style="padding: 30px;">
-                                <h1>Beli Tiket AKAP</h1>
-                                <div role="tabpanel" class="tab-pane active" id="economi">
-                                    <div class="row">
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <div class="input-field">
-                                                <label for="from">Nama:</label>
-                                                <input type="text" class="form-control" id="from-place" placeholder="Nama" name="nama">
+                                <form action="checkout.php" >
+                                    <h1>Beli Tiket AKAP</h1>
+                                    <div role="tabpanel" class="tab-pane active" id="economi">
+                                        <div class="row">
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <div class="input-field">
+                                                    <label for="from">Nama:</label>
+                                                    <input type="text" class="form-control" id="from-place" placeholder="Nama" name="nama" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <div class="input-field">
-                                                <label for="from">Nomor Handphone:</label>
-                                                <input type="number" class="form-control nohp" id="from-place" placeholder="0812345678" name="no_hp">
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <div class="input-field">
+                                                    <label for="from">Nomor Handphone:</label>
+                                                    <input type="number" class="form-control nohp" id="from-place" placeholder="0812345678" name="no_hp" required>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <div class="input-field">
-                                                <label for="from">Nomor Identitas:</label>
-                                                <input type="text" maxlength="16" class="form-control" id="from-place" placeholder="Nomor KTP" name="no_identitas">
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <div class="input-field">
+                                                    <label for="from">Nomor Identitas:</label>
+                                                    <input type="text" maxlength="16" class="form-control" id="from-place" placeholder="Nomor KTP" name="no_identitas" required>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-xxs-12 col-xs-6 mt alternate">
-                                            <div class="input-field">
-                                                <label for="date-end">Tanggal Berangkat:</label>
-                                                <input type="text" name="tanggal_berangkat" class="form-control" id="date-end" placeholder="mm/dd/yyyy">
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <div class="input-field">
+                                                    <label for="date-end">Tanggal Berangkat:</label>
+                                                    <input type="text" name="tanggal_berangkat" class="form-control" id="date-end" placeholder="mm/dd/yyyy" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <div class="input-field">
-                                                <label for="from">Asal:</label>
-                                                <select class="cs-select cs-skin-border" name="id_kota_asal">
-                                                    <option value="">Pilih kota</option>
-                                                    <?php foreach ($datakota as $key => $value) : ?>
-                                                        <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kota"] ?></option>
-                                                    <?php endforeach ?>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <div class="input-field">
+                                                    <label for="from">Asal:</label>
+                                                    <select class="cs-select cs-skin-border" name="id_kota_asal" required>
+                                                        <option value="">Pilih kota</option>
+                                                        <?php foreach ($datakota as $key => $value) : ?>
+                                                            <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kota"] ?></option>
+                                                        <?php endforeach ?>
 
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <div class="input-field">
-                                                <label for="from">Tujuan:</label>
-                                                <select class="cs-select cs-skin-border" name="id_kota_tujuan">
-                                                    <option value="">Pilih kota</option>
-                                                    <?php foreach ($datakota as $key => $value) : ?>
-                                                        <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kota"] ?></option>
-                                                    <?php endforeach ?>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <div class="input-field">
+                                                    <label for="from">Tujuan:</label>
+                                                    <select class="cs-select cs-skin-border" name="id_kota_tujuan" required>
+                                                        <option value="">Pilih kota</option>
+                                                        <?php foreach ($datakota as $key => $value) : ?>
+                                                            <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kota"] ?></option>
+                                                        <?php endforeach ?>
 
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xxs-12 col-xs-6 mt alternate">
-                                            <section>
-                                                <label for="class">Kelas:</label>
-                                                <select class="cs-select cs-skin-border" name="id_kelas">
-                                                    <option value="">Pilih Kelas</option>
-                                                    <?php foreach ($datakelas as $key => $value) : ?>
-                                                        <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kelas"] ?></option>
-                                                    <?php endforeach ?>
+                                            <div class="col-xxs-12 col-xs-6 mt alternate">
+                                                <section>
+                                                    <label for="class">Kelas:</label>
+                                                    <select class="cs-select cs-skin-border" name="id_kelas" required>
+                                                        <option value="">Pilih Kelas</option>
+                                                        <?php foreach ($datakelas as $key => $value) : ?>
+                                                            <option value="<?php echo $value["id"] ?>"><?php echo $value["nama_kelas"] ?></option>
+                                                        <?php endforeach ?>
 
-                                                </select>
-                                            </section>
-                                        </div>
+                                                    </select>
+                                                </section>
+                                            </div>
 
-                                        <div class="col-xxs-12 col-xs-6 mt">
-                                            <section>
-                                                <label for="class">Jumlah Penumpang:</label>
-                                                <select class="cs-select cs-skin-border">
-                                                    <option value="" disabled selected>1</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </section>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <input type="submit" class="btn btn-primary btn-block" value="Search Flight">
+                                            <div class="col-xxs-12 col-xs-6 mt">
+                                                <section>
+                                                    <label for="class">Jumlah Penumpang:</label>
+                                                    <select class="cs-select cs-skin-border" required>
+                                                        <option value="" disabled selected>1</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </section>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <input type="submit" class="btn btn-primary btn-block" value="Beli Tiket">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
 
                         </div>
@@ -130,3 +132,5 @@ echo "</pre>";
     </div>
 
 </div>
+
+
