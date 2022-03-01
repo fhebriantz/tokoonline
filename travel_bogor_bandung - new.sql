@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2022 at 03:12 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Waktu pembuatan: 01 Mar 2022 pada 23.54
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_bis`
+-- Struktur dari tabel `master_bis`
 --
 
 CREATE TABLE `master_bis` (
@@ -57,19 +57,18 @@ CREATE TABLE `master_bis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `master_bis`
+-- Dumping data untuk tabel `master_bis`
 --
 
 INSERT INTO `master_bis` (`id`, `nama_bis`, `tipe_bis`, `id_kelas`, `foto_bis_1`, `foto_bis_2`) VALUES
-(4, 'Damri-Reguler', 'Merchedes-Benz', 1, '2021-10-31 (1).png', '2021-10-28 (3).png'),
-(5, 'Damri-Bisnis', 'Merchedes-Benz', 2, '2021-10-28 (2).png', '2021-10-29.png'),
-(6, 'Damri-Eksekutif', 'Merchedes-Benz', 3, '2021-10-25.png', '2021-10-27 (1).png'),
-(8, 'gxgx', 'gaxgx', 2, '2021-11-14.png', '2021-12-10.png');
+(4, 'Damri-Reguler', 'Merchedes-Benz', 1, 'febe-vanermen-xnuGgz0ctks-unsplash.jpg', '2021-10-28 (3).png'),
+(5, 'Damri-Bisnis', 'Merchedes-Benz', 2, 'olivier-miche-OZACaaUskhg-unsplash.jpg', '2021-10-29.png'),
+(8, 'Damri-Eksekutif', 'Toyota', 3, 'febe-vanermen-xnuGgz0ctks-unsplash.jpg', '2021-12-10.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_kelas`
+-- Struktur dari tabel `master_kelas`
 --
 
 CREATE TABLE `master_kelas` (
@@ -79,18 +78,18 @@ CREATE TABLE `master_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `master_kelas`
+-- Dumping data untuk tabel `master_kelas`
 --
 
 INSERT INTO `master_kelas` (`id`, `nama_kelas`, `harga`) VALUES
 (1, 'Reguler', 40000),
-(2, 'Bisnis', 50000),
-(3, 'Eksekutif', 60000);
+(2, 'Bisnis', 45000),
+(3, 'Eksekutif', 50000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_kota`
+-- Struktur dari tabel `master_kota`
 --
 
 CREATE TABLE `master_kota` (
@@ -99,7 +98,7 @@ CREATE TABLE `master_kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `master_kota`
+-- Dumping data untuk tabel `master_kota`
 --
 
 INSERT INTO `master_kota` (`id`, `nama_kota`) VALUES
@@ -110,7 +109,7 @@ INSERT INTO `master_kota` (`id`, `nama_kota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_tentang`
+-- Struktur dari tabel `master_tentang`
 --
 
 CREATE TABLE `master_tentang` (
@@ -121,7 +120,7 @@ CREATE TABLE `master_tentang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `master_tentang`
+-- Dumping data untuk tabel `master_tentang`
 --
 
 INSERT INTO `master_tentang` (`id`, `judul`, `deskripsi`, `foto_tentang`) VALUES
@@ -130,7 +129,7 @@ INSERT INTO `master_tentang` (`id`, `judul`, `deskripsi`, `foto_tentang`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `master_wisata`
+-- Struktur dari tabel `master_wisata`
 --
 
 CREATE TABLE `master_wisata` (
@@ -145,7 +144,7 @@ CREATE TABLE `master_wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `master_wisata`
+-- Dumping data untuk tabel `master_wisata`
 --
 
 INSERT INTO `master_wisata` (`id`, `nama_wisata`, `id_kota`, `deskripsi`, `foto_wisata_1`, `foto_wisata_2`, `foto_wisata_3`, `video_url`) VALUES
@@ -156,7 +155,7 @@ INSERT INTO `master_wisata` (`id`, `nama_wisata`, `id_kota`, `deskripsi`, `foto_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_penumpang`
+-- Struktur dari tabel `tabel_penumpang`
 --
 
 CREATE TABLE `tabel_penumpang` (
@@ -178,104 +177,105 @@ CREATE TABLE `tabel_penumpang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tabel_penumpang`
+-- Dumping data untuk tabel `tabel_penumpang`
 --
 
 INSERT INTO `tabel_penumpang` (`id`, `nama`, `no_identitas`, `no_hp`, `id_kelas`, `id_kota_asal`, `id_kota_tujuan`, `tanggal_berangkat`, `jumlah_penumpang`, `jumlah_lansia`, `total_harga`, `kode_tiket`, `kode_unik_bayar`, `bukti_bayar`, `status`) VALUES
-(1, 'Rizki', 3271011111110001, '085718888888', 2, 3, 4, '2022-03-17', 4, 1, 190000, 'RTX3Z', 95, 'bukti.jpg', 'lunas'),
-(2, 'rizki', 21313, '21321312', 1, 3, 10, '2022-03-15', 2, 3, 2121, '1232144', 1234124, '2021-10-27 (1).png', 'pending');
+(5, 'ssss', 123, '123', 1, 3, 3, '2022-03-28', 2, 1, 76000, 'SVL8K1LP', 66, 'olivier-miche-OZACaaUskhg-unsplash.jpg', 'pending'),
+(6, 'Muhammad Rizki', 3232323232222222, '8978446499', 1, 3, 4, '2022-03-22', 4, 2, 152000, '2TTPFQO1', 29, 'olivier-miche-OZACaaUskhg-unsplash.jpg', 'pending'),
+(7, 'Muhammad Rizki', 123123123123123, '123123', 1, 3, 4, '2022-03-30', 3, 1, 116000, '804BLLOR', 44, 'olivier-miche-OZACaaUskhg-unsplash.jpg', 'pending');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `master_bis`
+-- Indeks untuk tabel `master_bis`
 --
 ALTER TABLE `master_bis`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_kelas`
+-- Indeks untuk tabel `master_kelas`
 --
 ALTER TABLE `master_kelas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_kota`
+-- Indeks untuk tabel `master_kota`
 --
 ALTER TABLE `master_kota`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_tentang`
+-- Indeks untuk tabel `master_tentang`
 --
 ALTER TABLE `master_tentang`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `master_wisata`
+-- Indeks untuk tabel `master_wisata`
 --
 ALTER TABLE `master_wisata`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tabel_penumpang`
+-- Indeks untuk tabel `tabel_penumpang`
 --
 ALTER TABLE `tabel_penumpang`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `master_bis`
+-- AUTO_INCREMENT untuk tabel `master_bis`
 --
 ALTER TABLE `master_bis`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `master_kelas`
+-- AUTO_INCREMENT untuk tabel `master_kelas`
 --
 ALTER TABLE `master_kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `master_kota`
+-- AUTO_INCREMENT untuk tabel `master_kota`
 --
 ALTER TABLE `master_kota`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `master_tentang`
+-- AUTO_INCREMENT untuk tabel `master_tentang`
 --
 ALTER TABLE `master_tentang`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `master_wisata`
+-- AUTO_INCREMENT untuk tabel `master_wisata`
 --
 ALTER TABLE `master_wisata`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tabel_penumpang`
+-- AUTO_INCREMENT untuk tabel `tabel_penumpang`
 --
 ALTER TABLE `tabel_penumpang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

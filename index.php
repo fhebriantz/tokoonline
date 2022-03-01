@@ -17,16 +17,20 @@ include 'koneksi.php';
 			<!-- konten -->
 			<?php
 			if (isset($_GET["halaman"])) {
-				if ($_GET["halaman"] == "car") {
-					include 'car.php';
-				}  elseif ($_GET["halaman"] == "contact") {
-					include 'contact.php';
-				} elseif ($_GET["halaman"] == "flight") {
-					include 'flight.php';
-				}  elseif ($_GET["halaman"] == "vacation") {
-					include 'vacation.php';
+				if ($_GET["halaman"] == "bis") {
+					include 'bis.php';
+				}  elseif ($_GET["halaman"] == "tentang") {
+					include 'tentang.php';
+				}  elseif ($_GET["halaman"] == "wisata") {
+					include 'wisata.php';
 				}	elseif ($_GET["halaman"] == "checkout") {
 					include 'checkout.php';
+				}	elseif ($_GET["halaman"] == "uploadbukti") {
+					include 'uploadbukti.php';
+				}	elseif ($_GET["halaman"] == "terimakasih") {
+					include 'terimakasih.php';
+				}	elseif ($_GET["halaman"] == "wisata") {
+					include 'wisata.php';
 				}
 			} else {
 				include 'home.php';

@@ -97,7 +97,7 @@ while ($tiap = $kelas->fetch_assoc()) {
                                             <div class="col-xxs-12 col-xs-6 mt">
                                                 <section>
                                                     <label for="class">Jumlah Penumpang:</label>
-                                                    <select class="cs-select cs-skin-border" required>
+                                                    <select class="cs-select cs-skin-border" name="jumlah_penumpang" required>
                                                         <option value="" disabled selected>1</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>

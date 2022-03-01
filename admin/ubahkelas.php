@@ -27,7 +27,7 @@ if (isset($_POST['ubah'])) {
         WHERE id = $_GET[id]");
 
 
-    echo "<script>alert('data wisata telah diubah');</script>";
+    echo "<script>alert('data kelas telah diubah');</script>";
     echo "<script>location='index.php?halaman=kelas';</script>";
 
     // echo "<pre>";

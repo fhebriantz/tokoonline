@@ -1,4 +1,4 @@
-<h2>Ubah wisata</h2>
+<h2>Ubah Bis</h2>
 <?php
 $ambil = $koneksi->query("SELECT * FROM master_bis WHERE id = '$_GET[id]'");
 $pecah = $ambil->fetch_assoc();
@@ -46,12 +46,12 @@ while ($tiap = $ambil->fetch_assoc()) {
         <input type="text" name="tipe_bis" class="form-control" value="<?php echo $pecah['tipe_bis'] ?>">
     </div>
     <div class="form-group">
-        <label>Foto Wisata 1</label>
+        <label>Foto Bis 1</label>
         <div><img src="./assets/img/<?php echo $pecah['foto_bis_1'] ?>" style="height: 120px; width:auto"></div>
         <input type="file" name="foto_bis_1" class="form-control">
     </div>
     <div class="form-group">
-        <label>Foto Wisata 2</label>
+        <label>Foto Bis 2</label>
         <div><img src="./assets/img/<?php echo $pecah['foto_bis_2'] ?>" style="height: 120px; width:auto"></div>
         <input type="file" name="foto_bis_2" class="form-control">
     </div>

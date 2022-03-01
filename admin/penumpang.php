@@ -43,13 +43,20 @@ while ($tiap = $ambil->fetch_assoc()) {
 
                 <td>
                     <a href="index.php?halaman=hapuspenumpang&id=<?php echo $value['id']; ?>" class=" btn-danger btn" onclick="return confirm('yakin hapus?')"><i class="glyphicon glyphicon-trash"></i> hapus</a>
-                    <a href="index.php?halaman=ubahpenumpang&id=<?php echo $value['id']; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i>ubah</a>
-                    <a href="index.php?halaman=detailpenumpang&id=<?php echo $pecah['id']; ?>" class="btn btn-info"><i class="glyphicon glyphicon-eye"></i> detail</a>
+                    <a href="index.php?halaman=detailpenumpang&id=<?php echo $value['id']; ?>" class="btn btn-info"><i class="glyphicon glyphicon-eye"></i> detail</a>
+                    <a href="index.php?halaman=ubahpenumpang&id=<?php echo $value['id']; ?>" class="btn btn-success" onclick="clicked(event)" ><i class="glyphicon glyphicon-edit"></i>Ubah Ke Lunas</a>
                 </td>
             </tr>
         <?php endforeach ?>
     </tbody>
 
 </table>
-
+<script>
+function clicked(e)
+{
+    if(!confirm('Tiket ubah ke lunas?')) {
+        e.preventDefault();
+    }
+}
+</script>
 <a href="index.php?halaman=tambahpenumpang" class="btn btn-primary">tambah data</a>
