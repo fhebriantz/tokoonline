@@ -76,16 +76,6 @@ if (isset($_POST['save'])) {
         (nama_wisata,id_kota,deskripsi,foto_wisata_1,foto_wisata_2,foto_wisata_3, video_url)
         VALUES('$_POST[nama_wisata]','$_POST[id_kota]','$_POST[deskripsi]','$namanamafoto1','$namanamafoto2','$namanamafoto3','$_POST[video_url]')");
 
-    //mendapatkan id_wisata barusan
-    $id_wisata_barusan = $koneksi->insert_id;
-
-    $koneksi->query("INSERT INTO master_wisata_foto (id_wisata,nama_wisata_foto)
-            VALUES ('$id_wisata_barusan','$namanamafoto1'); 
-                    INSERT INTO master_wisata_foto (id_wisata,nama_wisata_foto)
-            VALUES ('$id_wisata_barusan','$namanamafoto2'); 
-                    INSERT INTO master_wisata_foto (id_wisata,nama_wisata_foto)
-            VALUES ('$id_wisata_barusan','$namanamafoto3'); ");
-
 
     echo "<div class='alert alert-info'>Data tersimpan</div>";
     echo "<meta http-equiv='refresh' content='1; url=index.php?halaman=wisata'>";

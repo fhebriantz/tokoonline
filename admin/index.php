@@ -133,6 +133,10 @@ font-size: 16px;"> Muhammad Rizki &nbsp; <a href="index.php?halaman=logout" clas
 						include 'wisata.php';
 					} elseif ($_GET["halaman"] == "tambahwisata") {
 						include 'tambahwisata.php';
+					} elseif ($_GET["halaman"] == "ubahwisata") {
+						include 'ubahwisata.php';
+					} elseif ($_GET["halaman"] == "hapuswisata") {
+						include 'hapuswisata.php';
 					}
 				} else {
 					include 'home.php';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Feb 2022 pada 12.30
+-- Waktu pembuatan: 01 Mar 2022 pada 07.25
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
-(1, 'lutfi', '1234', 'Rizki');
+(1, 'rizki@gmail.com', 'rizki', 'Rizki');
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `master_kelas` (
 --
 
 INSERT INTO `master_kelas` (`id`, `nama_kelas`) VALUES
-(1, 'Ekonomi'),
+(1, 'Reguler'),
 (2, 'Bisnis'),
 (3, 'Eksekutif');
 
@@ -146,19 +146,7 @@ CREATE TABLE `master_wisata` (
 INSERT INTO `master_wisata` (`id`, `nama_wisata`, `id_kota`, `deskripsi`, `foto_wisata_1`, `foto_wisata_2`, `foto_wisata_3`, `video_url`) VALUES
 (1, 'Kawah Putih', 4, 'Kawah Putih adalah sebuah tempat wisata di Jawa Barat yang terletak di Desa Alam Endah, Kecamatan Rancabali, Kabupaten Bandung Jawa Barat yang terletak di kaki Gunung Patuha. Kawah putih merupakan sebuah danau yang terbentuk dari letusan Gunung Patuha.', 'kawah1.jpg', 'kawah2.jpg', 'kawah3.jpg', 'https://www.youtube.com/embed/OoSinKtNLVc'),
 (2, 'Tangkuban Perahu', 4, 'Gunung Tangkuban Parahu adalah salah satu gunung yang terletak di Provinsi Jawa Barat, Indonesia. Sekitar 20 km ke arah utara Kota Bandung, dengan rimbun pohon pinus dan hamparan kebun teh di sekitarnya, Gunung Tangkuban Parahu mempunyai ketinggian setinggi 2.084 meter.', 'tangkubanperahu1.jpg', 'tangkubanperahu2.jpg', 'tangkubanperahu3.jpg', 'https://www.youtube.com/embed/V0XrD6iVZvQ'),
-(3, 'Puncak', 3, 'Puncak adalah sebuah daerah wisata pegunungan yang termasuk ke dalam wilayah Kabupaten Bogor dan Kabupaten Cianjur, Provinsi Jawa Barat. Puncak terletak 70 km sebelah selatan di Jakarta.', 'Review-Wisata-di-Puncak-Bogor.jpg', 'Review-Wisata-di-Puncak-Bogor.jpg', 'Review-Wisata-di-Puncak-Bogor.jpg', 'https://www.youtube.com/embed/fke5NuvzJ_E');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `master_wisata_foto`
---
-
-CREATE TABLE `master_wisata_foto` (
-  `id` int(11) NOT NULL,
-  `id_wisata` int(11) NOT NULL,
-  `nama_wisata_foto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(5, 'puncakd', 3, 'q', 'WhatsApp Image 2021-08-13 at 20.40.56.jpeg', 'Review-Wisata-di-Puncak-Bogor.jpg', 'WhatsApp Image 2021-08-13 at 20.40.56.jpeg', 'https://www.youtube.com/embed/cBr3DNRcZFU');
 
 -- --------------------------------------------------------
 
@@ -403,12 +391,6 @@ ALTER TABLE `master_wisata`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `master_wisata_foto`
---
-ALTER TABLE `master_wisata_foto`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indeks untuk tabel `ongkir`
 --
 ALTER TABLE `ongkir`
@@ -494,13 +476,7 @@ ALTER TABLE `master_kota`
 -- AUTO_INCREMENT untuk tabel `master_wisata`
 --
 ALTER TABLE `master_wisata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `master_wisata_foto`
---
-ALTER TABLE `master_wisata_foto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `ongkir`
